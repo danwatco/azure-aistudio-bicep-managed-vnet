@@ -1,9 +1,9 @@
 
-# Azure AI Studio Managed Virtual Network Setup with Bicep
+# Azure AI Studio Managed Virtual Network in Bicep
 
-This set of templates demonstrates how to set up Azure AI Studio with a managed vnet configuration with internet outbound access enabled. This uses private connections for all the workspace resources, including the connection to Azure OpenAI.
+This set of templates demonstrates how to set up Azure AI Studio with a managed VNet configuration with internet outbound access enabled. This uses private connections for all the workspace resources, including the connection to Azure OpenAI.
  
-This also creates a virtual machine and a Bastion deployment for access so that you can test the deployment by using it as a jumpbox to connect to the environment. 
+This also creates a virtual machine and a Bastion deployment for access so that you can test the deployment by using it as a jumpbox to connect to AI Studio. 
 
 This project contains some use of [Azure Verified Modules](https://aka.ms/avm) and was further developed from the Azure sample at [https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.machinelearningservices/aistudio-basics](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.machinelearningservices/aistudio-basics)
 
@@ -28,16 +28,13 @@ This project contains some use of [Azure Verified Modules](https://aka.ms/avm) a
 
 ## Post Deployment
 
-After deployment, in order to provision the managed VNet without creating a compute instance you can use the following Azure CLI command.
+After deployment, in order to provision the managed VNet without creating a compute instance you can use the following Azure CLI command:
 
 ```azurecli
 az ml workspace provision-network -g my_resource_group -n my_workspace_name
 ```
 
 See more here: [https://learn.microsoft.com/en-us/azure/machine-learning/how-to-managed-network?view=azureml-api-2&tabs=azure-cli#manually-provision-a-managed-vnet](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-managed-network?view=azureml-api-2&tabs=azure-cli#manually-provision-a-managed-vnet)
-
-
-
 
 ## Learn more
 
