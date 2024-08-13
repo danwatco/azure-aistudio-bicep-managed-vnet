@@ -15,6 +15,10 @@ param subnets array = [{
   name: 'AzureBastionSubnet'
   addressPrefix: '10.0.2.0/24'
 }
+{
+  name: 'GatewaySubnet'
+  addressPrefix: '10.0.3.0/24'
+}
 ]
 
 param addressPrefixes array = ['10.0.0.0/16']

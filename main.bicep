@@ -91,3 +91,12 @@ module vm 'modules/access-vm.bicep' = {
     adminPassword: vmPassword
   }
 }
+
+module vpn 'modules/vpn-access.bicep' = {
+  name: 'vpn-access-${name}-${uniqueSuffix}-deployment'
+  params: {
+    subnetName: 'default'
+    vnetGatewayName: 'vpn-gw'
+    vnetResourceId: userVnet.outputs.vnetResourceId
+  }
+}
