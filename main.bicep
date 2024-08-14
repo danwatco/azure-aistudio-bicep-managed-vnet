@@ -81,21 +81,21 @@ module aiHub 'modules/ai-hub.bicep' = {
 }
 
 
-module vm 'modules/access-vm.bicep' = {
-  name: 'access-vm-${name}-${uniqueSuffix}-deployment'
-  params: {
-    bastionName: bastionName
-    subnetId: userVnet.outputs.defaultSubnetResourceId
-    vmName: virtualMachineName
-    vnetResourceId: userVnet.outputs.vnetResourceId
-    adminPassword: vmPassword
-  }
-}
+// module vm 'modules/access-vm.bicep' = {
+//   name: 'access-vm-${name}-${uniqueSuffix}-deployment'
+//   params: {
+//     bastionName: bastionName
+//     subnetId: userVnet.outputs.defaultSubnetResourceId
+//     vmName: virtualMachineName
+//     vnetResourceId: userVnet.outputs.vnetResourceId
+//     adminPassword: vmPassword
+//   }
+// }
 
 module vpn 'modules/vpn-access.bicep' = {
   name: 'vpn-access-${name}-${uniqueSuffix}-deployment'
   params: {
-    subnetName: 'default'
+    subnetId: resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet-${name}-${uniqueSuffix}', 'default')
     vnetGatewayName: 'vpn-gw'
     vnetResourceId: userVnet.outputs.vnetResourceId
   }
