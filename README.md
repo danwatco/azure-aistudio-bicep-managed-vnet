@@ -33,7 +33,7 @@ This project contains some use of [Azure Verified Modules](https://aka.ms/avm) a
 2. Deploy infra using Azure CLI
 
 ```bash
-az group deployment create -g <RESOURCE_GROUP> -f main.bicep -p main.parameters.json
+az deployment group create -g <RESOURCE_GROUP> -f main.bicep -p main.parameters.json
 ```
 
 3. Change the DNS servers on the VNet to the deployed inbound endpoint from the private DNS resolver
