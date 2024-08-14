@@ -18,15 +18,15 @@ param location string = resourceGroup().location
 @description('Set of tags to apply to all resources.')
 param tags object = {}
 
-@description('Name of the VM to use for JumpBox')
-param virtualMachineName string = 'vm-aistudio-lab'
+// @description('Name of the VM to use for JumpBox')
+// param virtualMachineName string = 'vm-aistudio-lab'
 
-@description('Name of Azure Bastion for VM Access')
-param bastionName string = 'ai-bastion'
+// @description('Name of Azure Bastion for VM Access')
+// param bastionName string = 'ai-bastion'
 
-@description('Password for VM access')
-@secure()
-param vmPassword string
+// @description('Password for VM access')
+// @secure()
+// param vmPassword string
 
 // Variables
 var name = toLower('${aiHubName}')
